@@ -24,6 +24,7 @@ export class TodoFormComponent implements OnInit, OnChanges {
     let newTodo: Itodo = this.todoForm.value
     newTodo.todoId = this._uuidService.uuid()
     this._todoService.createTodo(newTodo)
+    this.todoForm.resetForm()
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -44,5 +45,6 @@ export class TodoFormComponent implements OnInit, OnChanges {
     let updatedTodo = this.todoForm.value
     updatedTodo.todoId = this.editTodo.todoId
     this._todoService.updateTodo(updatedTodo)
+    this.todoForm.resetForm()
   }
 }

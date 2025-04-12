@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { StudentFormComponent } from './shared/components/student-dashboard/student-form/student-form.component';
+import { StudentInfoComponent } from './shared/components/student-dashboard/student-info/student-info.component';
 
 
 
@@ -21,7 +23,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     TodoDashboardComponent,
     TodoFormComponent,
     StudentDashboardComponent,
-    TodoListComponent
+    TodoListComponent,
+    StudentFormComponent,
+    StudentInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<table
+  class="table table-bordered table-light text-center"
+  *ngIf="stdArr.length > 0; else noStd"
+>
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>Full Name</th>
+      <th>Email Id</th>
+      <th>Contact</th>
+      <th>Is Active</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let std of stdArr; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ std.fname }} {{ std.lname }}</td>
+      <td>{{ std.email }}</td>
+      <td>{{ std.contact }}</td>
+      <td>{{ std.isActive ? "Yes" : "No" }}</td>
+      <td>
+        <button (click)="editOnClick(std.stdId)" mat-mini-fab color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+      <td>
+        <button (click)="removeOnClick(std.stdId)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noStd>
+  <p class="alert alert-light">There is student information yet...</p>
+</ng-template>

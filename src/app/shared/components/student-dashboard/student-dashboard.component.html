@@ -1,1 +1,9 @@
-<p>student-dashboard works!</p>
+
+<div class="row">
+    <div class="col-md-10 offset-md-1 my-5">
+        <app-student-form [editId]="editId" (resetEditId)="resetEditId()" ></app-student-form>
+    </div>
+    <div class="col-md-12">
+        <app-student-info (emitStdId)="stdIdtransfer($event)"></app-student-info>
+    </div>
+</div>

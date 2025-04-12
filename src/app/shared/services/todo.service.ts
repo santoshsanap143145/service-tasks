@@ -50,7 +50,7 @@ export class TodoService implements OnInit {
 
   removeTodo(id: string){
     let getIndex = this.todoArr.findIndex(todo => todo.todoId === id)
-    const removeTodoItem = this.todoArr[getIndex].todoItem
+    let removeTodoItem = this.todoArr[getIndex].todoItem
     this.todoArr.splice(getIndex, 1)
     this._snackBar.notify(`The Todo ${removeTodoItem} is removed Successfully !!!`)
   }

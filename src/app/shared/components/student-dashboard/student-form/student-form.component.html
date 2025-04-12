@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header">
+    <h2><strong>Student Form</strong></h2>
+  </div>
+  <div class="card-body">
+    <form #stdForm="ngForm" (ngSubmit)="submitOnclick()">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input
+          required
+          ngModel
+          #fname="ngModel"
+          type="text"
+          name="fname"
+          class="form-control"
+          id="fname"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input
+          required
+          ngModel
+          #lname="ngModel"
+          type="text"
+          name="lname"
+          class="form-control"
+          id="lname"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Id</label>
+        <input
+          required
+          ngModel
+          #email="ngModel"
+          type="text"
+          name="email"
+          class="form-control"
+          id="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact</label>
+        <input
+          required
+          ngModel
+          #contact="ngModel"
+          type="text"
+          name="contact"
+          class="form-control"
+          id="contact"
+        />
+      </div>
+      <div class="form-group">
+        <label for="isActive">Is Active</label>
+        <select
+          required
+          ngModel
+          #isActive="ngModel"
+          name="isActive"
+          class="form-control"
+          id="isActive"
+        >
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <button mat-raised-button type="submit" *ngIf="!editMode" color="primary">Add Student</button>
+      <button mat-raised-button type="button" (click)="updateOnClick()" *ngIf="editMode" color="primary">Update Student</button>
+    </form>
+  </div>
+</div>
