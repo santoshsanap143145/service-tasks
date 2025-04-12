@@ -1,0 +1,36 @@
+<ul class="list-group" *ngIf="todoArr.length > 0; else noTodo">
+  <li
+    [ngClass]="{
+      'list-group-item-success': i % 2 === 0,
+      'list-group-item-danger': i % 2 !== 0
+    }"
+    class="list-group-item d-flex justify-content-between"
+    *ngFor="let todo of todoArr; let i = index"
+  >
+    <strong>{{ i + 1 }} {{ todo.todoItem }}</strong>
+    <span>
+      <button
+        (click)="editOnClick(todo.todoId)"
+        class="mr-4"
+        mat-mini-fab
+        color="primary"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button
+      (click)="removeOnClick(todo.todoId)"
+        mat-mini-fab
+        color="warn"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </span>
+  </li>
+</ul>
+
+<ng-template #noTodo>
+  <p class="alert alert-warning">No Todos yet...</p>
+</ng-template>

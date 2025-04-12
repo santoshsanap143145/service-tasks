@@ -1,0 +1,9 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <app-todo-form [objId]="todoId"></app-todo-form>
+    </div>
+    <div class="col-md-6">
+        <app-todo-list (emitTodoid)="getId($event)"></app-todo-list>
+    </div>
+</div>
